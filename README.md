@@ -36,5 +36,5 @@ jobs:
 
         - name: URL
           run: |
-            echo "Manage your app at ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+            echo "Manage your app at ${{ steps.publish.outputs.url }}." >> $GITHUB_STEP_SUMMARY
 ```
