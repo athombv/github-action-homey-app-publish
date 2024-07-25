@@ -1,0 +1,16 @@
+# action.yml
+name: 'Homey App — Publish'
+description: 'Publish a Homey app to the Homey App Store'
+inputs:
+  personal_access_token:
+    description: "The app's owner Personal Access Token. This can be found at https://tools.developer.homey.app/me."
+    required: true
+outputs:
+  url:
+    description: 'An URL to the Homey Developer Tools, where the release can be managed.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.personal_access_token }}
