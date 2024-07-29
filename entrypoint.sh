@@ -4,9 +4,11 @@ set -e
 
 cd /github/workspace/
 
-echo $NPM_CONFIG_USERCONFIG
+cp $NPM_CONFIG_USERCONFIG /github/workspace/.npmrc
 
 npm ci --ignore-scripts
 HOMEY_HEADLESS="1" HOMEY_PAT="$1" npx homey app publish
+
+rm /github/workspace/.npmrc
 
 echo "url=https://tools.developer.homey.app/apps/app/$(cat app.json | jq --raw-output .id)" >> $GITHUB_OUTPUT
