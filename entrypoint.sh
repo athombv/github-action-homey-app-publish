@@ -4,7 +4,6 @@ set -e
 
 cd /github/workspace/
 
-cp $NPM_CONFIG_USERCONFIG .npmrc
 docker build --build-arg NODE_AUTH_TOKEN .
 
 npm ci --ignore-scripts
