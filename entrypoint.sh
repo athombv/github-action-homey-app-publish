@@ -4,7 +4,7 @@ set -e
 
 cd /github/workspace/
 
-cat $NPM_CONFIG_USERCONFIG
+echo $NPM_CONFIG_USERCONFIG
 
 npm ci --ignore-scripts
 HOMEY_HEADLESS="1" HOMEY_PAT="$1" npx homey app publish
