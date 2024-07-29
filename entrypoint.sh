@@ -4,8 +4,6 @@ set -e
 
 cd /github/workspace/
 
-docker build --build-arg NODE_AUTH_TOKEN .
-
 npm ci --ignore-scripts
 HOMEY_HEADLESS="1" HOMEY_PAT="$1" npx homey app publish
 
