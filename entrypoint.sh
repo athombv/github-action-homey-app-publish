@@ -4,12 +4,8 @@ set -e
 
 cd /github/workspace/
 
-if [ -f "/home/runner/work/_temp/.npmrc" ]; then
-    echo "Contenu du fichier .npmrc:"
-    cat /home/runner/work/_temp/.npmrc
-else
-    echo "Le fichier .npmrc n'existe pas dans le répertoire spécifié."
-fi
+echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > ~/.npmrc
+echo "@olivierzal:registry=https://npm.pkg.github.com/" >> ~/.npmrc
 
 npm ci --ignore-scripts
 HOMEY_HEADLESS="1" HOMEY_PAT="$1" npx homey app publish
