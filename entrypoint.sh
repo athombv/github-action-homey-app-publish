@@ -4,8 +4,9 @@ set -e
 
 cd /github/workspace/
 
-echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > ~/.npmrc
-echo "@olivierzal:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" > .npmrc
+echo "@olivierzal:registry=https://npm.pkg.github.com/" >> .npmrc
+cat .npmrc
 
 npm ci --ignore-scripts
 HOMEY_HEADLESS="1" HOMEY_PAT="$1" npx homey app publish
