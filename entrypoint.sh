@@ -1,4 +1,6 @@
 #!/bin/sh -l
+echo $NPM_CONFIG_USERCONFIG
+cat $NPM_CONFIG_USERCONFIG
 
 set -e
 
