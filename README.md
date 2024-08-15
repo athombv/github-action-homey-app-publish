@@ -17,16 +17,16 @@ An URL to the Homey Developer Tools, where the release can be managed.
 ## Example usage
 
 ```name: Publish Homey App
-
+name: Publish Homey App
 on:
   workflow_dispatch:
 
 jobs:  
     main:
-      name: Update App Version
+      name: Publish Homey App
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
         
         - name: Publish
           uses: athombv/github-action-homey-app-publish@master
