@@ -8,6 +8,8 @@ inputs:
 outputs:
   url:
     description: 'An URL to the Homey Developer Tools, where the release can be managed.'
+  build_url:
+    description: 'An URL to the uploaded build in the Homey Developer Tools, where it can be published. Empty when the Homey CLI did not report one.'
 
 runs:
   using: 'docker'

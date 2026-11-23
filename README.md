@@ -14,6 +14,10 @@ The app's owner Personal Access Token. This can be found at https://tools.develo
 
 An URL to the Homey Developer Tools, where the release can be managed.
 
+## build_url
+
+An URL to the uploaded build in the Homey Developer Tools, where it can be published. Empty when the Homey CLI did not report one.
+
 ## Example usage
 
 ```name: Publish Homey App
@@ -37,4 +41,5 @@ jobs:
         - name: URL
           run: |
             echo "Manage your app at ${{ steps.publish.outputs.url }}." >> $GITHUB_STEP_SUMMARY
+            echo "Publish this build at ${{ steps.publish.outputs.build_url }}." >> $GITHUB_STEP_SUMMARY
 ```
